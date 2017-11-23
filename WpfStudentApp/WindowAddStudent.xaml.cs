@@ -21,8 +21,8 @@ namespace WpfStudentApp
     /// </summary>
     public partial class WindowAddStudent : Window
     {
-        Image imageSmall;
-        Image imageBig;
+        //BitmapImage imageSmall;
+        //BitmapImage imageBig;
         public WindowAddStudent()
         {
             InitializeComponent();
@@ -34,7 +34,9 @@ namespace WpfStudentApp
             if (openDlg.ShowDialog() == true)
             {
                 imageBox.Source = new BitmapImage(new Uri(openDlg.FileName));
-                imageBig = imageBox;
+                //imageBig = new BitmapImage(new Uri(openDlg.FileName));
+                //var resized = new TransformedBitmap(imageBig, new ScaleTransform(15 / imageBig.PixelWidth, 15 / imageBig.PixelHeight));
+                
             }
         }
 
@@ -48,11 +50,11 @@ namespace WpfStudentApp
             Student newStud = new Student
             {
                 Name = textBox1.Text,
-                Image = Guid.NewGuid().ToString()
+                Image = Guid.NewGuid().ToString() ///////////////////////////////////
             };
-            Image.Deco
             MainWindow.studService.Add(newStud);
             MainWindow.studService.Save();
+            DialogResult = true;
         }
     }
 }

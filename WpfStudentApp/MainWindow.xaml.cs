@@ -25,12 +25,33 @@ namespace WpfStudentApp
         public MainWindow()
         {
             InitializeComponent();
+            foreach (var item in studService.GetAllStudents)
+            {
+                listBox1.Items.Add(item.Name);
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WindowAddStudent formAdd = new WindowAddStudent();
-            formAdd.ShowDialog();
+          
+            if (formAdd.ShowDialog() == true)
+            {
+                listBox1.Items.Clear();
+                foreach (var item in studService.GetAllStudents)
+                {
+                    listBox1.Items.Add(item.Name);
+                }
+            }
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            studService.
+            labelID = studService[listBox1.SelectedIndex].
+
+            
         }
     }
 }

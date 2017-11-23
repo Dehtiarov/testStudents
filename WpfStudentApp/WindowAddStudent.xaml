@@ -16,8 +16,8 @@
             <Label Content="Ім'я студента"  VerticalAlignment="Top"/>
             <TextBox x:Name="textBox1" VerticalAlignment="Top"/>
             <Image x:Name="imageBox" Height="162" Margin="0,0,-0.333,0" OpacityMask="#FFA09C9C"/>
-            <Button Content="Завантажити фото" VerticalAlignment="Top" Click="Button_Click"/>
-            <Button Content="Додати" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <Button x:Name="button1" Content="Завантажити фото" VerticalAlignment="Top" Click="Button_Click"/>
+            <Button x:Name="button2" Content="Додати" VerticalAlignment="Top" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Window>

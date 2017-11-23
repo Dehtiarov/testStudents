@@ -14,7 +14,7 @@
         <Label Content="" HorizontalAlignment="Left" Margin="42,29,0,0" VerticalAlignment="Top"/>
         <StackPanel Margin="5,0">
             <Label Content="Список  студентів" Margin="0,5,0,0"/>
-            <ListBox Height="213" Margin="0,0,0.333,0" Background="#FFE7E7E7"/>
+            <ListBox x:Name="listBox1" Height="213" Margin="0,0,0.333,0" Background="#FFE7E7E7" SelectionChanged="listBox1_SelectionChanged"/>
             <Button Content="Додати студента" Margin="0,5,0,0" Click="Button_Click"/>
             <Button Content="Видалити студента" Margin="0,5,0,0"/>
             <Button Content="Редагувати студента" Margin="0,5,0,0"/>
@@ -22,9 +22,11 @@
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="197.667,39,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF767575"/>
         <Label Content="Детальна інформація
                " Grid.Column="1" HorizontalAlignment="Left" Margin="73.667,5,0,0" VerticalAlignment="Top"/>
-        <Label Content="ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="58.667,54,0,0" VerticalAlignment="Top"/>
-        <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="63.667,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="64,54,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="64,85,0,0" VerticalAlignment="Top"/>
         <ListBox Grid.Column="1" HorizontalAlignment="Left" Height="95" Margin="22.667,150,0,0" VerticalAlignment="Top" Width="269"/>
+        <Label x:Name="labelID" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="112,54,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelName" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="112,85,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
