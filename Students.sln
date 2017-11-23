@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStudentApp", "ConsoleStudentApp\ConsoleStudentApp.csproj", "{034F9EC0-1152-4F21-A775-668A06FE58C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfStudentApp", "WpfStudentApp\WpfStudentApp.csproj", "{F92B41EB-C07D-448F-9FFC-B526285C773D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034F9EC0-1152-4F21-A775-668A06FE58C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034F9EC0-1152-4F21-A775-668A06FE58C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034F9EC0-1152-4F21-A775-668A06FE58C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034F9EC0-1152-4F21-A775-668A06FE58C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

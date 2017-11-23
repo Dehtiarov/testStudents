@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfStudentApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfStudentApp"
+        mc:Ignorable="d"
+        Title="База студентов" Height="359.778" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="317*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="" HorizontalAlignment="Left" Margin="42,29,0,0" VerticalAlignment="Top"/>
+        <StackPanel Margin="5,0">
+            <Label Content="Список  студентів" Margin="0,5,0,0"/>
+            <ListBox Height="213" Margin="0,0,0.333,0" Background="#FFE7E7E7"/>
+            <Button Content="Додати студента" Margin="0,5,0,0" Click="Button_Click"/>
+            <Button Content="Видалити студента" Margin="0,5,0,0"/>
+            <Button Content="Редагувати студента" Margin="0,5,0,0"/>
+        </StackPanel>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="197.667,39,0,0" VerticalAlignment="Top" Width="100" OpacityMask="#FF767575"/>
+        <Label Content="Детальна інформація
+               " Grid.Column="1" HorizontalAlignment="Left" Margin="73.667,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="58.667,54,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" Grid.Column="1" HorizontalAlignment="Left" Margin="63.667,85,0,0" VerticalAlignment="Top"/>
+        <ListBox Grid.Column="1" HorizontalAlignment="Left" Height="95" Margin="22.667,150,0,0" VerticalAlignment="Top" Width="269"/>
+
+
+    </Grid>
+</Window>
