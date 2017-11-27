@@ -14,6 +14,10 @@ namespace DAL
         private IList<Mark> _marks;
         private string _image;
 
+        public int Id {
+            get { return _id; }
+            set { _id = value; }
+        }
         public string Image
         {
             get { return _image; }
@@ -32,6 +36,28 @@ namespace DAL
         {
             get { return _name; }
             set { _name = value; }
+        }
+
+
+        public void AddMark(Mark m)
+        {
+            try
+            {
+                if (_marks.Count() == 0)
+                    _marks = new List<Mark>();
+            }
+            catch
+            { _marks = new List<Mark>(); }
+            _marks.Add(m);
+        }
+        public void DeleteMark(int index)
+        {
+            _marks.RemoveAt(index);
+        }
+
+        public int CountMarks
+        {
+            get { return _marks.Count(); }
         }
 
     }

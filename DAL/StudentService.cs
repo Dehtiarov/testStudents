@@ -11,6 +11,7 @@ namespace DAL
 {
     public class StudentService
     {
+        private static int counter = 1000;
         private IList<Student> _students;
         private string _fileName;// = "students.bin";
         public StudentService()
@@ -31,7 +32,15 @@ namespace DAL
         }
         public void Add(Student student)
         {
+            if (_students.Count != 0)
+                student.Id = this.GetAllStudents[this.CountStudents - 1].Id + 1;
+            else
+                student.Id = counter;
             _students.Add(student);
+        }
+        public void Delete(int index)
+        {
+            _students.RemoveAt(index);
         }
         public void Save()
         {
@@ -49,5 +58,11 @@ namespace DAL
         {
             get { return _students.Count(); }
         }
+
+        //public Student this[int index]
+        //{
+        //    get { return _students[index]; }
+        //    set { this[index] = value; }
+        //}
     }
 }

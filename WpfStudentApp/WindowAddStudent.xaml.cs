@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAL;
+using System.IO;
+
 
 namespace WpfStudentApp
 {
@@ -23,6 +26,7 @@ namespace WpfStudentApp
     {
         //BitmapImage imageSmall;
         //BitmapImage imageBig;
+        string patch = null;
         public WindowAddStudent()
         {
             InitializeComponent();
@@ -34,9 +38,10 @@ namespace WpfStudentApp
             if (openDlg.ShowDialog() == true)
             {
                 imageBox.Source = new BitmapImage(new Uri(openDlg.FileName));
+                patch = openDlg.FileName;
                 //imageBig = new BitmapImage(new Uri(openDlg.FileName));
                 //var resized = new TransformedBitmap(imageBig, new ScaleTransform(15 / imageBig.PixelWidth, 15 / imageBig.PixelHeight));
-                
+
             }
         }
 
@@ -47,10 +52,12 @@ namespace WpfStudentApp
                 MessageBox.Show("Не заповнено поле Ім’я або не додане фото", "Увага", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            string newName = /*ConfigurationManager.AppSettings["ImagePath"].ToString() +*/ Environment.CurrentDirectory + @"\Images\"  + Guid.NewGuid().ToString() + ".jpg";
+            File.Copy(patch, newName);
             Student newStud = new Student
             {
                 Name = textBox1.Text,
-                Image = Guid.NewGuid().ToString() ///////////////////////////////////
+                Image = newName//Guid.NewGuid().ToString() ///////////////////////////////////
             };
             MainWindow.studService.Add(newStud);
             MainWindow.studService.Save();
