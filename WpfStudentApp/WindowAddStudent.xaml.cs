@@ -27,41 +27,72 @@ namespace WpfStudentApp
         //BitmapImage imageSmall;
         //BitmapImage imageBig;
         string patch = null;
-        public WindowAddStudent()
+        int IndexEdit;
+        bool changedFoto = false;
+        public WindowAddStudent(int index)
         {
+            IndexEdit = index;
             InitializeComponent();
+            if (index != -1)
+            {
+                textBox1.Text = MainWindow.studService.GetAllStudents[index].Name;
+                imageBox.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + MainWindow.studService.GetAllStudents[index].ImageSmall));
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           OpenFileDialog openDlg = new OpenFileDialog();
+            OpenFileDialog openDlg = new OpenFileDialog();
+            openDlg.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF";
             if (openDlg.ShowDialog() == true)
             {
-                imageBox.Source = new BitmapImage(new Uri(openDlg.FileName));
                 patch = openDlg.FileName;
-                //imageBig = new BitmapImage(new Uri(openDlg.FileName));
-                //var resized = new TransformedBitmap(imageBig, new ScaleTransform(15 / imageBig.PixelWidth, 15 / imageBig.PixelHeight));
-
+                imageBox.Source = new BitmapImage(new Uri(patch));
+                changedFoto = true;
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if(textBox1.Text.Length ==0 && imageBox.Source == null)
+            if (textBox1.Text.Length == 0 || imageBox.Source == null)
             {
-                MessageBox.Show("Не заповнено поле Ім’я або не додане фото", "Увага", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Не заповнено поле Ім’я або не додано фото", "Увага", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            string newName = /*ConfigurationManager.AppSettings["ImagePath"].ToString() +*/ Environment.CurrentDirectory + @"\Images\"  + Guid.NewGuid().ToString() + ".jpg";
-            File.Copy(patch, newName);
+            string newNameBig = /* @"\Images\"*/ ConfigurationManager.AppSettings["ImagePath"].ToString() + Guid.NewGuid().ToString() + ".jpg";
+            string newNameSmall = /* @"\Images\"*/ ConfigurationManager.AppSettings["ImagePath"].ToString() + Guid.NewGuid().ToString() + ".jpg";
+            //File.Copy(patch, newName);
+
+            var image = System.Drawing.Image.FromFile(patch);
+            var newImageBig = ImageConverter.ImageWorker.ConverImageToBitmap(image, 480, 640);
+            if (newImageBig != null)
+            {
+                newImageBig.Save(Environment.CurrentDirectory + newNameBig, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+
+            var newImageSmall = ImageConverter.ImageWorker.ConverImageToBitmap(image, 134, 156);
+            if (newImageSmall != null)
+            {
+                newImageSmall.Save(Environment.CurrentDirectory + newNameSmall, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
             Student newStud = new Student
             {
                 Name = textBox1.Text,
-                Image = newName//Guid.NewGuid().ToString() ///////////////////////////////////
+                Image = newNameBig,
+                ImageSmall = newNameSmall
             };
-            MainWindow.studService.Add(newStud);
-            MainWindow.studService.Save();
-            DialogResult = true;
+            if (IndexEdit == -1)
+            {
+                MainWindow.studService.Add(newStud);
+                MainWindow.studService.Save();
+                patch = null;
+            }
+            else
+            {
+                MainWindow.studService.Edit(newStud, IndexEdit);
+            }
+        
+        DialogResult = true;
         }
-    }
+}
 }

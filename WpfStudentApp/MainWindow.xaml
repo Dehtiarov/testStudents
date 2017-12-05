@@ -9,34 +9,35 @@
         Title="База студентов" Height="376.445" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="201*"/>
-            <ColumnDefinition Width="154*"/>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="166*"/>
             <ColumnDefinition Width="162*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="" HorizontalAlignment="Left" Margin="42,29,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="42,29,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
         <StackPanel Margin="5,0">
             <Label Content="Список  студентів" Margin="0,5,0,0"/>
             <ListBox x:Name="listBox1" Height="213" Margin="0,0,0.333,0" Background="#FFE7E7E7" SelectionChanged="listBox1_SelectionChanged"/>
             <Button x:Name="button1" Content="Додати студента" Margin="0,5,0,0" Click="Button_Click"/>
             <Button x:Name="button2" Content="Видалити студента" Margin="0,5,0,0" Click="Button_Click_1"/>
-            <Button x:Name="button3" Content="Редагувати студента" Margin="0,5,0,0"/>
+            <Button x:Name="button3" Content="Редагувати студента" Margin="0,5,0,0" Click="button3_Click"/>
         </StackPanel>
-        <Image x:Name="pictureBox1" Grid.Column="2" HorizontalAlignment="Left" Height="156" Margin="10,39,0,0" VerticalAlignment="Top" Width="134" OpacityMask="#FF767575"/>
-        <Label Content="Детальна інформація                " Grid.Column="1" HorizontalAlignment="Left" Margin="74,5,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top"/>
-        <Label Content="Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="16,66,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelID" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="64,40,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelName" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="64,66,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dataGrid1" Grid.Column="1" HorizontalAlignment="Left" Height="199" Margin="10,95,0,0" VerticalAlignment="Top" Width="134" IsSynchronizedWithCurrentItem="True">
+        <Image x:Name="pictureBox1" Grid.Column="2" HorizontalAlignment="Left" Height="156" Margin="10,39,0,0" VerticalAlignment="Top" Width="134" OpacityMask="#FF767575" MouseEnter="pictureBox1_MouseEnter" MouseLeave="pictureBox1_MouseLeave" MouseLeftButtonUp="pictureBox1_MouseLeftButtonUp"/>
+        <Label Content="Детальна інформація                " Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="26" Width="180"/>
+        <Label Content="ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="26" Width="24"/>
+        <Label Content="Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
+        <Label x:Name="labelID" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="58,40,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
+        <Label x:Name="labelName" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="58,66,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
+        <DataGrid x:Name="dataGrid1" Grid.Column="1" HorizontalAlignment="Left" Height="224" Margin="10,95,0,0" VerticalAlignment="Top" Width="146" IsSynchronizedWithCurrentItem="True">
             <DataGrid.DataContext>
                 <DAL:Mark Discipline=""/>
             </DataGrid.DataContext>
         </DataGrid>
-        <Button x:Name="button4" Content="Додати" Grid.Column="2" HorizontalAlignment="Left" Margin="32,299,0,0" VerticalAlignment="Top" Width="96" Click="button4_Click"/>
-        <Button x:Name="button5" Content="Видалити" Grid.Column="1" HorizontalAlignment="Left" Margin="34,299,0,0" VerticalAlignment="Top" Width="96" Click="button5_Click"/>
-        <TextBox x:Name="textBoxNameMark" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
-        <TextBox x:Name="textBoxMark" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="102,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-        <Label Content="Додати предмет та цінку&#xA;для студента" Grid.Column="2" HorizontalAlignment="Left" Margin="8,200,0,0" VerticalAlignment="Top" Height="53"/>
+        <Button x:Name="button4" Content="Додати" Grid.Column="2" HorizontalAlignment="Left" Margin="21,299,0,0" VerticalAlignment="Top" Width="118" Click="button4_Click" Height="20"/>
+        <TextBox x:Name="textBoxMark" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="21,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
+        <Label Content="Додати предмет та цінку&#xA;для студента" Grid.Column="2" HorizontalAlignment="Left" Margin="8,200,0,0" VerticalAlignment="Top" Height="53" Width="146"/>
+        <Image x:Name="pictureBox2" HorizontalAlignment="Left" Height="18" Margin="5,5,0,0" VerticalAlignment="Top" Width="27" Grid.Column="0"/>
+        <ComboBox x:Name="comboBox1" Grid.Column="2" HorizontalAlignment="Left" Margin="21,244,0,0" VerticalAlignment="Top" Width="118" Height="22"/>
+        <Label Content="Фото         " Grid.Column="2" HorizontalAlignment="Left" Margin="8,5,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
 
 
     </Grid>

@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C77EFFDD-8DEB-491D-9724-D776D5ABC2BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStudentApp", "ConsoleStudentApp\ConsoleStudentApp.csproj", "{034F9EC0-1152-4F21-A775-668A06FE58C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfStudentApp", "WpfStudentApp\WpfStudentApp.csproj", "{F92B41EB-C07D-448F-9FFC-B526285C773D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{C69D6287-1C0D-45F4-9916-052385DF1011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +29,15 @@ Global
 		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F92B41EB-C07D-448F-9FFC-B526285C773D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69D6287-1C0D-45F4-9916-052385DF1011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69D6287-1C0D-45F4-9916-052385DF1011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69D6287-1C0D-45F4-9916-052385DF1011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69D6287-1C0D-45F4-9916-052385DF1011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBEDCAE9-926C-4F94-BA70-98B76D1C7A5A}
 	EndGlobalSection
 EndGlobal

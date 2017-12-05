@@ -13,6 +13,7 @@ namespace DAL
         private string _name;        
         private IList<Mark> _marks;
         private string _image;
+        private string _imageSmall;
 
         public int Id {
             get { return _id; }
@@ -22,6 +23,11 @@ namespace DAL
         {
             get { return _image; }
             set { _image = value; }
+        }
+        public string ImageSmall
+        {
+            get { return _imageSmall; }
+            set { _imageSmall = value; }
         }
 
 

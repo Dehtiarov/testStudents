@@ -38,6 +38,12 @@ namespace DAL
                 student.Id = counter;
             _students.Add(student);
         }
+        public void Edit(Student student, int index)
+        {
+            this.Delete(index);
+            this.Add(student);
+        }
+
         public void Delete(int index)
         {
             _students.RemoveAt(index);
